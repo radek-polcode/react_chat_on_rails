@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.1'
+ruby '2.5.3'
 
 gem 'devise'
 gem 'omniauth'
@@ -59,3 +59,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "react_on_rails", "11.0.0" # Update to the current version
+gem "webpacker", "~> 3" # Newer versions might be supported
