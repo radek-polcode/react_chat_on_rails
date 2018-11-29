@@ -33,14 +33,16 @@ export default class MessageForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="messageForm" 
+              onSubmit={this.handleSubmit}>
           <input type="text" 
                  name="body" 
                  value={this.state.body}
                  onChange={this.handleChange}
                  ref={input => this.body = input}
-                 autoFocus='true'
-                 placeholder='Enter your message' />
+                 autoFocus={true}
+                 placeholder='Enter your message'
+                  />
           <input type="submit" value="Send" name="commit" />
         </form>
       </div>
