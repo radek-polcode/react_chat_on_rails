@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import MessagesList from './MessagesList';
+import update from 'immutability-helper';
 
 export default class Chatroom extends React.Component {
   /**
@@ -20,6 +21,16 @@ export default class Chatroom extends React.Component {
 
   updateMessages(message) {
     console.log(message)
+    const messages = update(
+      this.state.messages,
+      {$push: [message]}
+    )
+
+    this.setState(
+      {
+        messages: messages
+      }
+    )
   }
 
   componentDidMount() {
