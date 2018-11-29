@@ -48,6 +48,10 @@ export default class Chatroom extends React.Component {
     return;
   }
 
+  componentDidUpdate() {
+    document.getElementById('messagesBottom').scrollIntoView()
+  }
+
   render() {
     return (
       <div>
