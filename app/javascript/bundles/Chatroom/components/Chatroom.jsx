@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import MessagesList from './MessagesList';
 import update from 'immutability-helper';
+
+import MessageForm from './MessageForm';
+import MessagesList from './MessagesList';
 
 export default class Chatroom extends React.Component {
   /**
@@ -50,6 +52,7 @@ export default class Chatroom extends React.Component {
     return (
       <div>
         <MessagesList messages={this.state.messages} />
+        <MessageForm chatroomId={this.state.chatroomId} />
       </div>
     );
   }
