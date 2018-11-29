@@ -12,9 +12,27 @@ export default class Chatroom extends React.Component {
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
     this.state = { 
+      chatroomId: chatroom.id,
       messages: chatroom.messages 
     };
     console.log(this.props)
+  }
+
+  updateMessages(message) {
+    console.log(message)
+  }
+
+  componentDidMount() {
+    App.chatroom = App.cable.subscriptions.create({
+      channel: 'ChatroomChannel',
+      id: this.state.chatroomId
+    }, {
+      received: function(data) {
+        this.updateMessages(data.message)
+      }.bind(this)
+    });
+    
+    return;
   }
 
   render() {
