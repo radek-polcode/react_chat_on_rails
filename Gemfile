@@ -7,7 +7,7 @@ end
 
 ruby '2.5.3'
 
-gem 'devise'
+gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem 'omniauth'
 gem 'omniauth-github'
 
