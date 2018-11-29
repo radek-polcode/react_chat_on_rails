@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       ChatroomChannel.broadcast_to(
         @chatroom,
         message: MessagesController.render(
-          partial: 'messages/message',
+          partial: 'messages/message.json',
           locals: { message: @message }
         )
       )

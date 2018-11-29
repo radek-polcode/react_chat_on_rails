@@ -28,7 +28,7 @@ export default class Chatroom extends React.Component {
       id: this.state.chatroomId
     }, {
       received: function(data) {
-        this.updateMessages(data.message)
+        this.updateMessages(JSON.parse(data.message))
       }.bind(this)
     });
     
